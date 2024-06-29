@@ -1,9 +1,9 @@
 <main class="dark:bg-mainDark pb-20">
     <x-container class="pt-36">
         <div>
-            <div>
+            <x-heading.heading1 class="lg:!text-4xl capitalize">Tag ({{ $tag }})</x-heading.heading1>
 
-                
+            <div class="mt-8">
                 <div class="hs-accordion-group">
                     @for ($i = 1; $i <= 15; $i++)
                         <div class="hs-accordion {{ $i > 1 ? '' : 'active' }} bg-white border -mt-px first:rounded-t-lg last:rounded-b-lg dark:bg-neutral-800 dark:border-neutral-700"
@@ -16,10 +16,7 @@
                                         Di Buat Pada 25 Juni 2024
                                     </x-paragraph.paragraph>
                                     <span class="line-clamp-1">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nesciunt
-                                        reprehenderit, blanditiis repellendus nemo suscipit reiciendis qui, animi nam
-                                        officia beatae quos magni aliquam? Iure architecto ratione voluptate labore
-                                        molestiae?
+                                        Laravel Dengan Multi Koneksi Database: Panduan Langkah demi Langkah
                                     </span>
                                 </div>
                                 <span class="hidden hs-accordion-active:block font-normal">
@@ -45,9 +42,7 @@
                                 aria-labelledby="hs-bordered-heading-{{ $i }}">
                                 <div class="pb-4 px-5">
                                     <x-heading.heading2 class="!font-semibold">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel dolor iure, quo
-                                        optio ipsum perspiciatis officiis voluptatibus perferendis nemo. Voluptatibus
-                                        neque beatae quia, accusamus odit atque dignissimos vitae facere quo.
+                                        Laravel Dengan Multi Koneksi Database: Panduan Langkah demi Langkah
                                     </x-heading.heading2>
                                     <p class="text-gray-600 dark:text-neutral-400 mt-4">
                                         <em>This is the third item's accordion body.</em> It is hidden by default, until
@@ -57,9 +52,12 @@
                                         via
                                         CSS transitions.
                                     </p>
-                                    <x-aksi.button class="mt-4 before:!bg-primary">
-                                        <x-heading.heading4 class="!text-white">Baca Selengkapnya</x-heading.heading4>
-                                    </x-aksi.button>
+                                    <a wire:navigate href="{{ route('article') }}">
+                                        <x-aksi.button class="mt-4 before:!bg-primary">
+                                            <x-heading.heading4 class="!text-white">Baca
+                                                Selengkapnya</x-heading.heading4>
+                                        </x-aksi.button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

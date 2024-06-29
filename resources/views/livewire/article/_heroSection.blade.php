@@ -44,9 +44,9 @@
                             <h1 class="font-semibold text-sm px-2 mb-1 text-gray-900 dark:text-white">Sort By</h1>
                             <x-aksi.dropdownOption href="">Popular</x-aksi.dropdownOption>
                             <x-aksi.dropdownOption href="">Terbaru</x-aksi.dropdownOption>
-                            <x-aksi.dropdownOption data-hs-overlay="#tag"
+                            <x-aksi.dropdownOption :navigate="false" data-hs-overlay="#tag"
                                 class="cursor-pointer">Tag</x-aksi.dropdownOption>
-                            <x-aksi.dropdownOption data-hs-overlay="#kategori"
+                            <x-aksi.dropdownOption :navigate="false" data-hs-overlay="#kategori"
                                 class="cursor-pointer">Kategori</x-aksi.dropdownOption>
                             <x-aksi.dropdownOption href="{{ route('article') }}"
                                 class="bg-red-600 text-center !text-white hover:!bg-red-500 mt-4">Hapus

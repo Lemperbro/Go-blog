@@ -55,7 +55,6 @@
 @script
     <script data-navigate-once defer>
         document.addEventListener('livewire:navigated', function() {
-            window.HSStaticMethods.autoInit(["tooltip"]);
 
             (function() {
                 // window.addEventListener('load', () => {

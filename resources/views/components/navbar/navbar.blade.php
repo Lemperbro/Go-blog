@@ -1,6 +1,8 @@
 <header>
     <nav class="z-20 w-full fixed border-b-[1px]  transition-all dark:border-borderDark">
+
         <x-container>
+
             <div class="flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0 relative">
                 <input aria-hidden="true" type="checkbox" name="toggle_nav" id="toggle_nav" class="hidden peer">
                 <div class="relative z-20 w-full flex justify-between lg:w-max md:px-0">
@@ -12,31 +14,49 @@
                         <span class="text-2xl font-bold text-gray-900 dark:text-white">{{ config('app.name') }}</span>
                     </a>
 
+
                     <div class="lg:hidden flex gap-2 items-center">
                         <button type="button" onclick="Search.showModal()"
                             class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
                             <i class="ri-search-2-line text-[18px] "></i>
                         </button>
+                        @if (auth()->user() !== null)
+                            <button type="button" data-hs-overlay="#sidebarNav" aria-controls="sidebarNav"
+                                aria-label="Toggle navigation"
+                                class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700">
+                                <img class="inline-block size-[30px] rounded-full ring-2 ring-white dark:ring-neutral-800"
+                                    src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+                                    alt="Image Description">
+                            </button>
+                        @else
+                            <button type="button"
+                                class="size-9 flex justify-center items-center text-sm font-semibold rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-neutral-700 "
+                                data-hs-overlay="#sidebarNav" aria-controls="sidebarNav" aria-label="Toggle navigation">
+                                <svg class="hs-collapse-open:hidden flex-shrink-0 size-4"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="3" x2="21" y1="6" y2="6" />
+                                    <line x1="3" x2="21" y1="12" y2="12" />
+                                    <line x1="3" x2="21" y1="18" y2="18" />
+                                </svg>
+                                <svg class="hs-collapse-open:block hidden flex-shrink-0 size-4"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M18 6 6 18" />
+                                    <path d="m6 6 12 12" />
+                                </svg>
+                            </button>
+                        @endif
 
-                        <button type="button"
-                            class="size-9 flex justify-center items-center text-sm font-semibold rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-neutral-700 "
-                            data-hs-overlay="#sidebarNav" aria-controls="sidebarNav" aria-label="Toggle navigation">
-                            <svg class="hs-collapse-open:hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="3" x2="21" y1="6" y2="6" />
-                                <line x1="3" x2="21" y1="12" y2="12" />
-                                <line x1="3" x2="21" y1="18" y2="18" />
-                            </svg>
-                            <svg class="hs-collapse-open:block hidden flex-shrink-0 size-4"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M18 6 6 18" />
-                                <path d="m6 6 12 12" />
-                            </svg>
-                        </button>
+
+
                     </div>
+
+
+
+
                 </div>
                 <div aria-hidden="true"
                     class="fixed z-10 inset-0 h-screen w-screen bg-white/70 backdrop-blur-2xl origin-bottom scale-y-0 transition duration-500 peer-checked:origin-top peer-checked:scale-y-100 lg:hidden dark:bg-gray-900/70">
@@ -51,7 +71,7 @@
                         <ul class="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0">
                             <x-navbar.navlink :active="request()->routeIs('home')" href="{{ route('home') }}">Home</x-navbar.navlink>
                             <x-navbar.navlink :active="request()->routeIs('article')" href="{{ route('article') }}">Article</x-navbar.navlink>
-                            <x-navbar.navlink :active="request()->routeIs('tags')" href="{{ route('tags') }}">Tags</x-navbar.navlink>
+                            <x-navbar.navlink :active="request()->routeIs('tags') || request()->routeIs('tags*')" href="{{ route('tags') }}">Tags</x-navbar.navlink>
                             <x-navbar.navlink :active="request()->routeIs('about')" href="{{ route('about') }}">About</x-navbar.navlink>
                         </ul>
                     </div>
@@ -62,8 +82,21 @@
                             <i class="ri-search-2-line text-[18px] "></i>
                         </button>
                         <x-aksi.theme />
+                        {{-- <div class="flex gap-2 items-center">
+                            <x-aksi.button class="!h-auto !px-4 !py-2">
+                                <x-paragraph.paragraph
+                                    class="!text-white !font-normal !text-sm">Login</x-paragraph.paragraph>
+                            </x-aksi.button>
+                            <x-aksi.button class="!h-auto !px-4 !py-2 before:!bg-primary">
+                                <x-paragraph.paragraph
+                                    class="!text-white !font-normal !text-sm">Daftar</x-paragraph.paragraph>
+                            </x-aksi.button>
+                         
+                        </div> --}}
+                        <x-navbar.user />
                     </div>
                 </div>
+
             </div>
         </x-container>
     </nav>
@@ -79,7 +112,7 @@
     <script data-navigate-once>
         document.addEventListener('livewire:navigated', function() {
             const nav = document.querySelector("nav");
-            window.HSStaticMethods.autoInit(["overlay"]);
+
 
             window.addEventListener("scroll", function() {
                 if (window.scrollY > 0) {
