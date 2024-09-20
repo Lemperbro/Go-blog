@@ -4,6 +4,7 @@
         <img class="inline-block size-[38px] rounded-full ring-2 ring-white dark:ring-neutral-800"
             src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
             alt="Image Description">
+
     </button>
 
     <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-mainDark dark:border dark:border-borderDark"

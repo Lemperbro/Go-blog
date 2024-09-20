@@ -57,7 +57,6 @@
         document.addEventListener('livewire:navigated', function() {
 
             (function() {
-                // window.addEventListener('load', () => {
                 const $clipboards = document.querySelectorAll('.js-clipboard');
                 $clipboards.forEach((el) => {
                     const isToggleTooltip = HSStaticMethods.getClassProperty(el,
@@ -119,7 +118,6 @@
                         }, 800);
                     });
                 });
-                // })
             })()
 
         });

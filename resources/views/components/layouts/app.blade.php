@@ -26,8 +26,8 @@
     
     {{-- <x-subscribe/> --}}
     <x-footer/>
-    @livewireScripts
     <x-javascript.js />
+    @livewireScripts
 </body>
 
 </html>

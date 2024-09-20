@@ -10,7 +10,7 @@
     </div>
     <div class="absolute opacity-5 bottom-2 xl:bottom-5 left-[50%] transform -translate-x-1/2  w-full m-0">
         <h1 class="text-gray-900 dark:text-white text-7xl md:text-[100px] xl:text-[250px] font-bold text-center"><span
-                class="text-primary">Go</span>-Blog</h1>
+                class="text-primary">Code</span>-Blog</h1>
     </div>
     <x-container>
         <div class="mt-auto w-full  py-10 px-4 sm:px-6 lg:px-8 lg:pt-20 mx-auto">

@@ -52,16 +52,13 @@
                                 class="bg-red-600 text-center !text-white hover:!bg-red-500 mt-4">Hapus
                                 Filter</x-aksi.dropdownOption>
                         </div>
-
                     </x-aksi.dropdown>
                 </div>
             </div>
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4 py-4 mt-8 ">
-                @for ($i = 1; $i <= 8; $i++)
-                    <x-cards.article-card>
-
-                    </x-cards.article-card>
-                @endfor
+                @foreach ($artikelAll as $item)
+                    <x-cards.article-card :data="$item" />
+                @endforeach
             </div>
         </div>
     </x-container>
@@ -91,7 +88,6 @@
 @script
     <script data-navigate-once defer>
         document.addEventListener('livewire:navigated', function() {
-
             $('#tagInput').select2({
                 width: 'resolve',
                 placeholder: "Pilih Tag",

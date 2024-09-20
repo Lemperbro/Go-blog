@@ -72,6 +72,7 @@
                             <x-navbar.navlink :active="request()->routeIs('home')" href="{{ route('home') }}">Home</x-navbar.navlink>
                             <x-navbar.navlink :active="request()->routeIs('article')" href="{{ route('article') }}">Article</x-navbar.navlink>
                             <x-navbar.navlink :active="request()->routeIs('tags') || request()->routeIs('tags*')" href="{{ route('tags') }}">Tags</x-navbar.navlink>
+
                             <x-navbar.navlink :active="request()->routeIs('about')" href="{{ route('about') }}">About</x-navbar.navlink>
                         </ul>
                     </div>

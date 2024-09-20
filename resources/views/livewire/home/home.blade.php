@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="pb-20">
         <x-container>
             <div class="flex justify-between">
@@ -38,7 +38,7 @@
                 @endfor
             </div>
         </x-container>
-    </div> 
+    </div>
     <div class="pb-20 ">
         <x-container>
             <div class="flex justify-between">
@@ -53,12 +53,13 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-6 ">
-                @for ($i = 1; $i <= 8; $i++)
-                    <x-cards.article-card>
-                    </x-cards.article-card>
-                @endfor
+                @foreach ($artikelAll as $item)
+                    <x-cards.article-card :data="$item" />
+                @endforeach
             </div>
         </x-container>
     </div>
-    
+
 </main>
+
+
